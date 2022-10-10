@@ -34,5 +34,20 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {
+    "cypress": "^10.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vish1608/cyp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vish1608/cyp/issues"
+  },
+  "homepage": "https://github.com/vish1608/cyp#readme"
 }
