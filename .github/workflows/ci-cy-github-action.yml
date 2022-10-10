@@ -1,26 +1,24 @@
-name: Parallel Cypress Tests
-
-on: [push]
+name: run my vanilla Cypress tests
+on: 
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
 
 jobs:
-  test:
-    name: Cypress run
-    runs-on: ubuntu-20.04
-    strategy:
-      fail-fast: false
-      matrix:
-        # run 3 copies of the current job in parallel
-        containers: [1, 2, 3]
+  checkout-and-test:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+
+      - name: Check out repository code
         uses: actions/checkout@v2
-      
-      - name: Cypress run
+
+      - name: run cypress tests with firefox
         uses: cypress-io/github-action@v2
+        timeout-minutes: 10
         with:
-          record: true
-          parallel: true
-          group: 'Actions example'  
+          browser: chrome  
 
         env:
           # pass the Dashboard record key as an environment variable
