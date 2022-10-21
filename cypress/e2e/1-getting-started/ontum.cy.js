@@ -18,29 +18,29 @@ import { cms } from "./cms"
 
 it('visit', visit)
 
-it('signup', signup)
+// it('signup', signup)
 
-it('signin', signin)
+// it('signin', signin)
 
-it('filter', filter)
+// it('filter', filter)
 
-it('sync', sync)
+// it('sync', sync)
 
-it('profile', profile)
+// it('profile', profile)
 
-it('MoreOptions', MoreOptions)
+// it('MoreOptions', MoreOptions)
 
-it('home', home)
+// it('home', home)
 
-it('chapters', chapters)
+// it('chapters', chapters)
 
-it('lessons', lessons)
+// it('lessons', lessons)
 
-it('bookmarks', bookmarks)
+// it('bookmarks', bookmarks)
 
-it('downloads', downloads)
+// it('downloads', downloads)
 
-it('help', help)
+// it('help', help)
 
 it('logout', logout)
 
