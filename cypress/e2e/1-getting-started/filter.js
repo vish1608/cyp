@@ -4,13 +4,13 @@ const filter = () => {
 //Filter Icon
 cy.get('.jss12 > :nth-child(1)').click()
 
-//Help
-cy.window().then(win => {
-    cy.stub(win, 'open').as('open')
-})
+// //Help
+// cy.window().then(win => {
+//     cy.stub(win, 'open').as('open')
+// })
 
-cy.get('.jss58 > div > [title="Help"]').click()
-cy.get('@open').should('calledWithExactly', `${helpBaseUrl}/features/filter`, '_blank')
+// cy.get('.jss58 > div > [title="Help"]').click()
+// cy.get('@open').should('calledWithExactly', `${helpBaseUrl}/features/filter`, '_blank')
 
 //Grade
 const GradeFilter = [ '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13' ]
