@@ -1,8 +1,7 @@
 import { BaseUrl } from "./consts"
 
 const visit = () => {
-    cy.clearLocalStorage()
-    cy.clearCookies()
+    indexedDB.deleteDatabase('offline-blobs') //logs out before starting the test
     cy.visit(`${BaseUrl}/login`)
 }
 
