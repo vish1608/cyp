@@ -41,4 +41,4 @@ it('downloads', downloads)
 
 it('help', help)
 
-// it('cms', cms)
+it('cms', cms)
