@@ -1,10 +1,4 @@
 const cms = () => {
-
-    //logout of the app
-    cy.get('.jss12 > .MuiBox-root').click()
-    cy.contains('Logout').click()
-    cy.wait(1000)
-
     cy.visit('https://stage.cms.ontum.co/')
 
     cy.get('#login_email').type('Administrator')
