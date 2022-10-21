@@ -9,7 +9,7 @@ cy.window().then(win => {
     cy.stub(win, 'open').as('open')
 })
 
-cy.get('.jss58 > div > [title="Help"]').click()
+cy.get('.jss57 > div > [title="Help"]').click()
 cy.get('@open').should('calledWithExactly', `${helpBaseUrl}/features/filter`, '_blank')
 
 //Grade

@@ -44,4 +44,4 @@ it('help', help)
 
 it('logout', logout)
 
-it('cms', cms)
+// it('cms', cms)
