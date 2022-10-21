@@ -50,9 +50,9 @@ const lessons = () => {
     cy.get('@open').should('calledWithExactly', `${helpBaseUrl}/content/lessons`, '_blank')
 
     // Teach and Prepare
-    cy.get('.MuiButton-outlined').click()
+    cy.contains('Teach').click()
     cy.wait(2000)
-    cy.get('.MuiButton-outlined').click()
+    cy.contains('Prepare').click()
     cy.wait(2000)
 
     // //Fullscreen

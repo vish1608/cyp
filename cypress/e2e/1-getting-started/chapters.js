@@ -25,7 +25,7 @@ const chapters = () => {
     })
 
     //Apply
-    cy.get('.MuiButton-contained').click()
+    cy.contains('Apply').click()
 
     //Check order
     Cypress._.times(8, (index) => {
@@ -50,9 +50,9 @@ const chapters = () => {
     cy.get('@open').should('calledWithExactly', `${helpBaseUrl}/content/lessons`, '_blank')
 
     // Teach and Prepare
-    cy.get('.MuiButton-outlined').click()
+    cy.contains('Teach').click()
     cy.wait(2000)
-    cy.get('.MuiButton-outlined').click()
+    cy.contains('Prepare').click()
     cy.wait(2000)
 
     // //Fullscreen
