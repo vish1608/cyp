@@ -40,7 +40,7 @@ it('visit', visit)
 
 // it('downloads', downloads)
 
-// it('help', help)
+it('help', help)
 
 it('logout', logout)
 
