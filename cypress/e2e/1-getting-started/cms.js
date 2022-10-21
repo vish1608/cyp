@@ -8,6 +8,8 @@ const cms = () => {
 
     //User Profile
     cy.get('.widget-body > [href="/app/user-profile"]').click()
+    cy.reload()
+    cy.wait(8000)
     cy.contains('cypress@ontum.co').click()
     cy.wait(1000)
     cy.get('body').type('{shift}{ctrl}{d}')
