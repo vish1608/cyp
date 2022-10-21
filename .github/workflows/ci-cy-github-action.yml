@@ -11,6 +11,9 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
 
+        with:
+          browser: chrome
+
         env:
           # pass the Dashboard record key as an environment variable
             CYPRESS_RECORD_KEY: ${{ secrets.f9b19a03-b154-429e-97cd-2a0a31ced0b5 }}
