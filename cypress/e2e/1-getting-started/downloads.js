@@ -2,7 +2,7 @@ import { helpBaseUrl, BaseUrl } from "./consts"
 
 const downloads = () => {
     cy.get('.MuiToolbar-root > :nth-child(1)').click()
-    cy.get('.MuiList-root > :nth-child(5) > .MuiButtonBase-root').click()
+    cy.get('.MuiListItem-root > .MuiTypography-root').click()
     cy.wait(2000)
 
     //checks if url is correct
@@ -20,10 +20,10 @@ const downloads = () => {
     cy.get('#sync_download').click()
     cy.wait(2000)
 
-    //Delete download
-    cy.get(':nth-child(1) > .jss164 > .jss172 > .MuiPaper-root > .MuiCardHeader-root > .MuiCardHeader-action > .MuiButtonBase-root').click()
-    cy.get('[style="position: fixed; z-index: 1300; inset: 0px;"] > .MuiPaper-root > .MuiList-root > :nth-child(3)').click()
-    cy.wait(1000)
+    // //Delete download
+    // cy.get(':nth-child(2) > .jss344 > .jss352 > .MuiPaper-root > .MuiCardHeader-root > .MuiCardHeader-action').click()
+    // cy.get('[style="position: fixed; z-index: 1300; inset: 0px;"] > .MuiPaper-root > .MuiList-root > :nth-child(3)').click()
+    // cy.wait(1000)
 }
 
 export default {downloads}

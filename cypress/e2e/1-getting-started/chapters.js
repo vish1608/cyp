@@ -42,7 +42,7 @@ const chapters = () => {
     cy.wait(500)
 
     //Open a lesson
-    cy.get(':nth-child(1) > .MuiListItem-container > .MuiListItem-root').click()
+    cy.get(':nth-child(1) > .MuiPaper-root > .MuiGrid-container > .MuiGrid-grid-xs-3').click()
     cy.wait(6000)
 
     //Lesson Help
@@ -55,9 +55,9 @@ const chapters = () => {
     cy.get('.MuiButton-outlined').click()
     cy.wait(2000)
 
-    //Fullscreen
-    cy.get('.react-pdf__Document > .MuiButtonBase-root').click()
-    cy.wait(2000)
+    // //Fullscreen
+    // cy.get('.react-pdf__Document > .MuiButtonBase-root').click()
+    // cy.wait(2000)
 
     //Arrow navigation
     for(let n = 0; n < 5; n ++){
@@ -72,21 +72,29 @@ const chapters = () => {
     cy.get('.MuiSlider-thumb').type("{rightarrow}{rightarrow}{rightarrow}");
     cy.wait(1000)
 
-    //Exit Fullscreen
-    cy.get('.react-pdf__Document > .MuiButtonBase-root').click()
-    cy.wait(1000)
+    // //Exit Fullscreen
+    // cy.get('.react-pdf__Document > .MuiButtonBase-root').click()
+    // cy.wait(1000)
 
     //Go back
     cy.get('.MuiGrid-align-content-xs-center > :nth-child(1)').click()
     cy.wait(1000)
 
-    //Add Bookmark
-    cy.get(':nth-child(1) > .MuiListItem-container > .MuiListItemSecondaryAction-root > [aria-label="bookmark"]').click()
-    cy.wait(1000)
-    cy.get('#notistack-snackbar').should('contain','Bookmark added')
-
     //Go back
     cy.get('.MuiGrid-root > .MuiButtonBase-root').click()
+
+    //Add Bookmark
+    cy.get(':nth-child(2) > .MuiPaper-root > .MuiCardHeader-root > .MuiCardHeader-action').click()
+    cy.get('[style="position: fixed; z-index: 1300; inset: 0px;"] > .MuiPaper-root > .MuiList-root > [tabindex="0"][role="menuitem"]').click()
+    cy.get('#notistack-snackbar').should('contain','Bookmark added')
+
+    //Share
+    cy.get('[style="position: fixed; z-index: 1300; inset: 0px;"] > .MuiPaper-root > .MuiList-root > :nth-child(2)').click()
+    cy.get(':nth-child(18) > .MuiPaper-root > .MuiList-root').should('contain','Whatsapp').and('contain','Facebook').and('contain','LinkedIn').and('contain','Twitter').and('contain','SMS').and('contain','Email')
+
+    //Escape Key
+    cy.get('body').trigger('keydown', { keyCode: 27})
+    cy.get('body').trigger('keydown', { keyCode: 27})
 
     //Page Number
     cy.get('.MuiPagination-ul > :nth-child(3) > .MuiButtonBase-root').click()
@@ -103,13 +111,6 @@ const chapters = () => {
 
     // Clear search
     cy.get('#search').type('{selectall}{backspace}')
-
-    //Share
-    cy.get(':nth-child(2) > .MuiPaper-root > .MuiCardActions-root > [aria-label="share"]').click()
-    cy.get('[style="position: fixed; z-index: 1300; inset: 0px;"] > .MuiPaper-root > .MuiList-root').should('contain','Whatsapp').and('contain','Facebook').and('contain','LinkedIn').and('contain','Twitter').and('contain','SMS').and('contain','Email')
-
-    //Escape Key
-    cy.get('body').trigger('keydown', { keyCode: 27})
 }
 
 export default {chapters}

@@ -4,7 +4,7 @@ const signup = () => {
 
     //email
     cy.get('.MuiTextField-root > .MuiInputBase-root > .MuiInputBase-input')
-    .type('vishal@ontum.co')
+    .type('cypress@ontum.co')
 
     cy.get(':nth-child(5) > .MuiButtonBase-root').click()
 
@@ -39,8 +39,8 @@ const signup = () => {
     cy.get('@open').should('calledWithExactly', `${helpBaseUrl}/getting-started/sign-up`, '_blank')
 
     //Personal info
-    cy.get(':nth-child(1) > .MuiInputBase-root > .MuiInputBase-input')
-    .type('oooo')
+    cy.get(':nth-child(1) > .MuiInputBase-root > .MuiInputBase-input').type('{selectall}{backspace}')
+    .type('cypress')
 
     cy.get(':nth-child(2) > .MuiInputBase-root > .MuiInputBase-input')
     .type('testing')

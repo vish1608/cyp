@@ -13,6 +13,7 @@ import { lessons } from "./lessons"
 import { bookmarks } from "./bookmarks"
 import { downloads } from "./downloads"
 import { help } from "./help"
+import { cms } from "./cms"
 
 it('visit', visit)
 
@@ -39,3 +40,5 @@ it('bookmarks', bookmarks)
 it('downloads', downloads)
 
 it('help', help)
+
+it('cms', cms)

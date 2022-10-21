@@ -9,18 +9,18 @@ const profile = () => {
     //checks if url is correct
     cy.url().should('be.equal', `${BaseUrl}/app/account`)
 
-    window.localStorage.setItem('country', 'India')
+    window.localStorage.setItem('country', 'india')
 
     //Edit
     cy.contains('Edit').click()
 
     //First name
     cy.get(':nth-child(1) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input')
-    .type('aa')
+    .type('ss')
 
     //Last name
     cy.get('.MuiGrid-grid-md-9 > :nth-child(2) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input')
-    .type('ee')
+    .type('gg')
 
     //dob
     cy.get('.MuiGrid-grid-md-9 > :nth-child(3) > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input')
@@ -37,6 +37,10 @@ const profile = () => {
 
     //Snackbar
     cy.get('#notistack-snackbar').should('contain', 'Profile updated')
+
+    //Back to homepage
+    cy.get('.MuiToolbar-root > :nth-child(1)').click()
+    cy.get('.MuiList-root > :nth-child(1) > .MuiButtonBase-root').click()
 }
 
 export default {profile}

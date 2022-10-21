@@ -55,9 +55,9 @@ const lessons = () => {
     cy.get('.MuiButton-outlined').click()
     cy.wait(2000)
 
-    //Fullscreen
-    cy.get('.react-pdf__Document > .MuiButtonBase-root').click()
-    cy.wait(2000)
+    // //Fullscreen
+    // cy.get('.react-pdf__Document > .MuiButtonBase-root').click()
+    // cy.wait(2000)
 
     //Arrow navigation
     for(let n = 0; n < 5; n ++){
@@ -72,9 +72,9 @@ const lessons = () => {
     cy.get('.MuiSlider-thumb').type("{rightarrow}{rightarrow}{rightarrow}");
     cy.wait(1000)
 
-    //Exit Fullscreen
-    cy.get('.react-pdf__Document > .MuiButtonBase-root').click()
-    cy.wait(1000)
+    // //Exit Fullscreen
+    // cy.get('.react-pdf__Document > .MuiButtonBase-root').click()
+    // cy.wait(1000)
 
     //Go back
     cy.get('.MuiGrid-align-content-xs-center > :nth-child(1)').click()

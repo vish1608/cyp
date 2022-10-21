@@ -13,7 +13,7 @@ const bookmarks = () => {
         cy.stub(win, 'open').as('open')
     })
     
-    cy.get('.MuiIconButton-label > .MuiSvgIcon-root > path').click()
+    cy.get('.MuiBox-root > .MuiIconButton-root > .MuiIconButton-label > .MuiSvgIcon-root > path').click()
     cy.get('@open').should('calledWithExactly', `${helpBaseUrl}/content/bookmarks`, '_blank')
 
     //Sync bookmarks
@@ -22,16 +22,15 @@ const bookmarks = () => {
 
     //Lessons tab
     cy.get('.MuiTabs-flexContainer > [tabindex="-1"]').click()
+    cy.wait(1000)
+
+    //Chapters tab
+    cy.get('.MuiTabs-flexContainer > [tabindex="-1"]').click()
 
     //Remove Bookmark
     cy.get('.MuiCardHeader-action').click()
     cy.get('[tabindex="0"][role="menuitem"] > .MuiButtonBase-root').click()
     cy.get('#notistack-snackbar').should('contain','Bookmark removed')
-
-    cy.wait(1000)
-
-    //Chapters tab
-    cy.get('.MuiTabs-flexContainer > [tabindex="-1"]').click()
 }
 
 export default {bookmarks}
