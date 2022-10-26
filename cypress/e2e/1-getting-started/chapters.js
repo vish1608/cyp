@@ -27,10 +27,15 @@ const chapters = () => {
     //Apply
     cy.contains('Apply').click()
 
-    //Check order
+    //Check order and filter
     Cypress._.times(8, (index) => {
         cy.get(`:nth-child(${index+1}) > .MuiPaper-root`)
           .should('contain', `Chapter Number ${index+1}`)
+          .and('contain', 'Grade 2')
+          .and('contain', 'English')
+          .and('contain', 'Semester 1')
+          .and('contain', 'Bridge Course')
+          .and('contain', 'English')
     })
 
     //Reset filter

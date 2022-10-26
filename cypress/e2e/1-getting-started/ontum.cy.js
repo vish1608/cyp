@@ -7,7 +7,7 @@ import { filter } from "./filter"
 import { sync } from "./sync"
 import { profile } from "./profile"
 import { MoreOptions } from "./MoreOptions"
-import { home } from "./home"
+// import { home } from "./home"
 import { chapters } from "./chapters"
 import { lessons } from "./lessons"
 import { bookmarks } from "./bookmarks"
@@ -29,7 +29,7 @@ it('profile', profile)
 
 it('MoreOptions', MoreOptions)
 
-it('home', home)
+// it('home', home)
 
 it('chapters', chapters)
 
