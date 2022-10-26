@@ -20,4 +20,4 @@ jobs:
           # pass the Dashboard record key as an environment variable
             CYPRESS_RECORD_KEY: ${{ secrets.28d80ecb-8567-4144-8c19-3ae7f9a51efe }}
           # pass GitHub token to allow accurately detecting a build vs a re-run build
-            GITHUB_TOKEN: ${{ secrets.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 }}
+            GITHUB_TOKEN: ${{ secrets.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 }}
