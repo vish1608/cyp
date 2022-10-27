@@ -13,8 +13,8 @@ jobs:
 
         with:
           browser: chrome
-          # record: true
-          # path: cyp\cypress\videos
+          record: true
+          path: cypress\videos
 
         # env:
         #   # pass the Dashboard record key as an environment variable
