@@ -16,7 +16,7 @@ jobs:
           record: true
           # path: cypress\videos
 
-        env:
+        # env:
           # pass the Dashboard record key as an environment variable
             # CYPRESS_RECORD_KEY: ${{ secrets.be0f382b-b422-4365-8b61-414599358cec }}
           # # pass GitHub token to allow accurately detecting a build vs a re-run build
