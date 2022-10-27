@@ -14,13 +14,11 @@ jobs:
         with:
           browser: chrome
           record: true
+          record-key: be0f382b-b422-4365-8b61-414599358cec
           # path: cypress\videos
 
         env:
-
-        export CYPRESS_RECORD_KEY=be0f382b-b422-4365-8b61-414599358cec
-        cypress run --record
-          # # pass the Dashboard record key as an environment variable
-          #   CYPRESS_RECORD_KEY: ${{ secrets.be0f382b-b422-4365-8b61-414599358cec }}
+          # pass the Dashboard record key as an environment variable
+            CYPRESS_RECORD_KEY: ${{ secrets.be0f382b-b422-4365-8b61-414599358cec }}
           # # pass GitHub token to allow accurately detecting a build vs a re-run build
           #   GITHUB_TOKEN: ${{ secrets.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 }}
