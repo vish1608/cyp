@@ -14,7 +14,8 @@ jobs:
         with:
           browser: chrome
           record: true
-          # path: cypress\videos
+          wait-on: 'http://localhost:3000'
+          command-prefix: 'yarn'
 
         env:
           # pass the Dashboard record key as an environment variable
