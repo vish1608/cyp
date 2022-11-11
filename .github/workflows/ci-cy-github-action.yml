@@ -11,7 +11,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
 
-        run: echo aaa
+        # run: echo aaa
 
         with:
           browser: chrome
