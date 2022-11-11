@@ -11,10 +11,12 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
 
+        run: echo "::set-output name=value::sha-$GITHUB_SHA-time-$(date +"%s")"
+
         with:
           browser: chrome
           record: true
-          wait-on: 'http://127.0.0.1:3000'
+          wait-on: 'http://dev-app.ontum.co'
           command-prefix: 'yarn'
 
         env:
