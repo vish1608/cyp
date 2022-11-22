@@ -15,7 +15,7 @@ import { downloads } from "./downloads"
 import { help } from "./help"
 import { cms } from "./cms"
 
-it('visit', visit)
+// it('visit', visit)
 
 // it('signup', signup)
 
