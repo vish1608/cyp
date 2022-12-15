@@ -11,7 +11,7 @@ const signin = () => {
     cy.wait(3000)
 
     //Check for the text "Verification Code"
-    cy.contains('Verification Codea')
+    cy.contains('Verification Code')
 
     //Help
     cy.window().then(win => {
