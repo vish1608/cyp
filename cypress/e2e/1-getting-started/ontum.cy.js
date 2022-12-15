@@ -21,7 +21,7 @@ it('visit', visit)
 
 it('signin', signin)
 
-// it('filter', filter)
+it('filter', filter)
 
 // it('sync', sync)
 
