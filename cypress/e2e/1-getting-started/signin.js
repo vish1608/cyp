@@ -4,14 +4,14 @@ const signin = () => {
 
     //email
     cy.get('.MuiTextField-root > .MuiInputBase-root > .MuiInputBase-input')
-    .type('cypress@ontum.co')
+    .type('vish@ontum.co')
 
     cy.get('.MuiButton-label').click()
 
     cy.wait(3000)
 
     //Check for the text "Verification Code"
-    cy.contains('Verification Code')
+    cy.contains('Verification Codea')
 
     //Help
     cy.window().then(win => {
