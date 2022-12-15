@@ -5,5 +5,5 @@ const visit = () => {
     cy.visit(`${BaseUrl}/login`)
     cy.contains('ssss')
 }
- 
+
 export default {visit}
