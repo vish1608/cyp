@@ -11,12 +11,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4
 
-      - name: deploy
-        if: ${{ github.event.workflow_run.conclusion == 'success' }}
-        run: |
-            URL="${{ secrets.WEBHOOK_URL }}"
-            curl -X POST -d {} "$URL" -H "Content-Type: application/json"
-
         # run: echo aaaa
 
         with:
@@ -31,7 +25,11 @@ jobs:
           # pass GitHub token to allow accurately detecting a build vs a re-run build
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   steps:
-      
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+        run: |
+            URL="${{ secrets.WEBHOOK_URL }}"
+            curl -X POST -d {} "$URL" -H "Content-Type: application/json"
