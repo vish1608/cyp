@@ -26,10 +26,10 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
-    if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: deploy
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
         run: |
             URL="${{ secrets.WEBHOOK_URL }}"
             curl -X POST -d {} "$URL" -H "Content-Type: application/json"
