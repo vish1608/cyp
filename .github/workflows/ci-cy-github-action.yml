@@ -25,12 +25,19 @@ jobs:
           # pass GitHub token to allow accurately detecting a build vs a re-run build
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      if: ${{ github.event.workflow_run.conclusion == 'success' }}
+      runs-on: ubuntu-latest
+      steps:
+        - name: deploy
+          run: |
+              URL="${{ secrets.WEBHOOK_URL }}"
+              curl -X POST -d {} "$URL" -H "Content-Type: application/json"
+
   # deploy:
-  on-success:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: deploy
-        run: |
-            URL="${{ secrets.WEBHOOK_URL }}"
-            curl -X POST -d {} "$URL" -H "Content-Type: application/json"
+  #   if: ${{ github.event.workflow_run.conclusion == 'success' }}
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: deploy
+  #       run: |
+  #           URL="${{ secrets.WEBHOOK_URL }}"
+  #           curl -X POST -d {} "$URL" -H "Content-Type: application/json"
