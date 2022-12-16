@@ -26,7 +26,8 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
-    if: steps.wait-for-build.outputs.conclusion == 'success'
+    # if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    needs: cypress-run
     runs-on: ubuntu-latest
     steps:
       - name: deploy
