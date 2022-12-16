@@ -16,8 +16,9 @@ jobs:
         with:
           browser: chrome
           record: true
-          wait-on: 'http://dev-app.ontum.co'
-          command-prefix: 'yarn'
+          build: yarn run build
+          start: yarn start
+          wait-on: 'http://localhost:3000'
 
         env:
           # pass the Dashboard record key as an environment variable
