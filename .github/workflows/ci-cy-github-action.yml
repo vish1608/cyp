@@ -25,9 +25,9 @@ jobs:
           # pass GitHub token to allow accurately detecting a build vs a re-run build
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  deploy:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+  if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    deploy:
+      runs-on: ubuntu-latest
       steps:
         - name: deploy
           run: |
