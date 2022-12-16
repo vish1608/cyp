@@ -19,9 +19,9 @@ it('visit', visit)
 
 // it('signup', signup)
 
-it('signin', signin)
+// it('signin', signin)
 
-it('filter', filter)
+// it('filter', filter)
 
 // it('sync', sync)
 
