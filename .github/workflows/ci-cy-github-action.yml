@@ -26,7 +26,7 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
-    if: ${{ steps.wait-for-build.outputs.conclusion == 'success' }}
+    if: steps.wait-for-build.outputs.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: deploy
