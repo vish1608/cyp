@@ -19,27 +19,17 @@ jobs:
           wait-on: 'http://dev-app.ontum.co'
           command-prefix: 'yarn'
 
-      - name: deploy
-         if: ${{ github.event.workflow_run.conclusion == 'success' }}
-         run: |
-             URL="${{ secrets.WEBHOOK_URL }}"
-             curl -X POST -d {} "$URL" -H "Content-Type: application/json"
-
         env:
           # pass the Dashboard record key as an environment variable
             CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           # pass GitHub token to allow accurately detecting a build vs a re-run build
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # runs-on: ubuntu-latest
-      # steps:
-
-
-  # deploy:
-  #   if: ${{ github.event.workflow_run.conclusion == 'success' }}
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: deploy
-  #       run: |
-  #           URL="${{ secrets.WEBHOOK_URL }}"
-  #           curl -X POST -d {} "$URL" -H "Content-Type: application/json"
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy
+        run: |
+            URL="${{ secrets.WEBHOOK_URL }}"
+            curl -X POST -d {} "$URL" -H "Content-Type: application/json"
