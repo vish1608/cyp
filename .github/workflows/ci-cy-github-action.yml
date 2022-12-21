@@ -19,7 +19,7 @@ jobs:
           # run: yarn global add serve
           build: yarn run build
           start: yarn serve -s build
-          wait-on: 'http://localhost:3000'
+          wait-on: 'http://localhost:3000' 
 
         env:
           # pass the Dashboard record key as an environment variable
