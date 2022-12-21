@@ -17,8 +17,8 @@ jobs:
           browser: chrome
           record: true
           # run: yarn global add serve
-          build: yarn run build
-          start: yarn serve
+          build: yarn serve
+          # start: yarn serve
           wait-on: 'http://localhost:3000'
 
         env:
