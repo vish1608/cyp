@@ -16,7 +16,7 @@ jobs:
         with:
           browser: chrome
           record: true
-          run: yarn global add serve
+          run: yarn add serve
           build: yarn run build
           start: yarn serve -s build
           wait-on: 'http://localhost:3000'
@@ -27,12 +27,12 @@ jobs:
           # pass GitHub token to allow accurately detecting a build vs a re-run build
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  deploy:
-    # if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    needs: cypress-run
-    runs-on: ubuntu-latest
-    steps:
-      - name: deploy
-        run: |
-            URL="${{ secrets.WEBHOOK_URL }}"
-            curl -X POST -d {} "$URL" -H "Content-Type: application/json"
+  # deploy:
+  #   # if: ${{ github.event.workflow_run.conclusion == 'success' }}
+  #   needs: cypress-run
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: deploy
+  #       run: |
+  #           URL="${{ secrets.WEBHOOK_URL }}"
+  #           curl -X POST -d {} "$URL" -H "Content-Type: application/json"
