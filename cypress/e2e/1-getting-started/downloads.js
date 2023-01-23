@@ -10,7 +10,7 @@ const downloads = () => {
 
     //Help
     cy.window().then(win => {
-        cy.stub(win, 'open').as('open')
+        cy.stub(win, 'open').as('open') 
     })
     
     cy.get(':nth-child(2) > .MuiBox-root > .MuiIconButton-root').click()
