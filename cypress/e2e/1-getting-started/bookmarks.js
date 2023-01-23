@@ -30,7 +30,7 @@ const bookmarks = () => {
     //Remove Bookmark
     cy.get('.MuiCardHeader-action').click()
     cy.get('[tabindex="0"][role="menuitem"] > .MuiButtonBase-root').click()
-    cy.get('#notistack-snackbar').should('contain','Bookmark removed')
+    cy.get('#notistack-snackbar').should('contain','Bookmark removed') 
 }
 
 export default {bookmarks}
