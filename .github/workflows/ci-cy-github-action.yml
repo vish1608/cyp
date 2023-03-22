@@ -1,18 +1,19 @@
 name: End-to-end tests
-on: [push]
-# on:
-#   push:
-#     branches:
-#       - dev
+# on: [push]
+on:
+  push:
+    branches:
+      - main
+      - dev
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.head_ref }}
+      cancel-in-progress: true
   cypress-run:
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-      max-parallel: 1
-    runs-on: ${{ matrix.os }}
-    # runs-on: ubuntu-20.04
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
