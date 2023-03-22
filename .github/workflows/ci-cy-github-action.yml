@@ -1,10 +1,13 @@
 name: End-to-end tests
-on: 
-  push:
-    branches:
-      - dev 
+on: [push]
+# on:
+#   push:
+#     branches:
+#       - dev
 jobs:
   cypress-run:
+    strategy:
+      max-parallel: 1
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -22,13 +25,13 @@ jobs:
           # run: yarn global add serve
           build: yarn run build
           start: yarn serve
-          wait-on: 'http://localhost:3000' 
+          wait-on: "http://localhost:3000"
 
         env:
           # pass the Dashboard record key as an environment variable
-            CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           # pass GitHub token to allow accurately detecting a build vs a re-run build
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   # deploy:
   #   # if: ${{ github.event.workflow_run.conclusion == 'success' }}

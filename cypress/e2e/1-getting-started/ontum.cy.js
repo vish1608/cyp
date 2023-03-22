@@ -1,6 +1,8 @@
 /// <reference types="cypress" />
 
 import { visit } from "./visit"
+// import { vid } from "./vid"
+import { vid2 } from "./vid2"
 import { signup } from "./signup"
 import { signin } from "./signin"
 import { filter } from "./filter"
@@ -14,12 +16,17 @@ import { bookmarks } from "./bookmarks"
 import { downloads } from "./downloads"
 import { help } from "./help"
 import { cms } from "./cms"
+import { yok } from "./yok"
 
-it('visit', visit)
+// it('visit', visit)
 
 // it('signup', signup)
 
 // it('signin', signin)
+
+// it('vid', vid)
+
+it('vid2', vid2)
 
 // it('filter', filter)
 
@@ -42,3 +49,5 @@ it('visit', visit)
 // it('help', help)
 
 // it('cms', cms)
+
+// it('yok', yok)
