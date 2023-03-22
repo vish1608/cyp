@@ -4,13 +4,11 @@ on: [push]
 #   push:
 #     branches:
 #       - dev
+
 jobs:
-  example_matrix:
-    runs-on: ubuntu-20.04
+  cypress-run:
     strategy:
       max-parallel: 1
-
-  cypress-run:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
