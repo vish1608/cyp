@@ -4,7 +4,7 @@ const signup = () => {
 
     //email
     cy.get('.MuiTextField-root > .MuiInputBase-root > .MuiInputBase-input')
-    .type('vish@ontum.co')
+    .type('cypress@ontum.co')
 
     cy.get(':nth-child(5) > .MuiButtonBase-root').click()
 
