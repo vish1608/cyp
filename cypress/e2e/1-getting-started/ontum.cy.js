@@ -18,7 +18,7 @@ import { help } from "./help"
 import { cms } from "./cms"
 import { yok } from "./yok"
 
-// it('visit', visit)
+it('visit', visit)
 
 // it('signup', signup)
 
@@ -26,7 +26,7 @@ import { yok } from "./yok"
 
 // it('vid', vid)
 
-it('vid2', vid2)
+// it('vid2', vid2)
 
 // it('filter', filter)
 
