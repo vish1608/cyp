@@ -1,10 +1,10 @@
 name: End-to-end tests
-# on: [push]
-on:
-  push:
-    branches:
-      - main
-      - dev
+on: [push]
+# on:
+#   push:
+#     branches:
+#       - main
+#       - dev
 
 jobs:
   cypress-run:
@@ -32,8 +32,7 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           # pass GitHub token to allow accurately detecting a build vs a re-run build
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    strategy:
-      max-parallel: 1
+    concurrency: "cypress-run-${{ github.head_ref }}"
 
   # deploy:
   #   # if: ${{ github.event.workflow_run.conclusion == 'success' }}
