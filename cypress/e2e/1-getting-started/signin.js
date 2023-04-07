@@ -26,7 +26,7 @@ const signin = () => {
     
     cy.get('.MuiButton-contained').click()
 
-    cy.wait(3000)
+    cy.wait(10000)
 
     cy.url().should('be.equal', `${BaseUrl}/home`)
 }

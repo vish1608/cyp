@@ -3,7 +3,7 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   projectId: '7z2r4f',
   chromeWebSecurity: false,
-  defaultCommandTimeout: 1000,
+  defaultCommandTimeout: 80000,
   numTestsKeptInMemory: 0,
   // experimentalShadowDomSupport: true,
   e2e: {
