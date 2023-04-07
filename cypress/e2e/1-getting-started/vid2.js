@@ -43,6 +43,7 @@ const vid2 = () => {
 
     
 
+    
     cy.readFile('vid.csv').then((fileContent) => {
 
         const rows = fileContent.split('\n').slice(1).map((row) => row.split(','));
