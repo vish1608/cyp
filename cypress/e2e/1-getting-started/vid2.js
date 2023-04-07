@@ -7,8 +7,6 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 const vid2 = () => {
 
-    // caches.delete('cache-storage-1'); // clears cache storage
-
     cy.readFile('vid.csv').then((fileContent) => {
 
         const rows = fileContent.split('\n').slice(1).map((row) => row.split(','));
@@ -20,9 +18,9 @@ const vid2 = () => {
 
             cy.visit(url)
 
-            cy.get('.MuiButton-outlined', { timeout: 80000 }).click();
+            cy.get('.MuiButton-outlined', { timeout: 80000 }).click({force: true});
 
-            cy.get('.MuiSlider-thumb', { timeout: 5000 }).type('{rightarrow}'.repeat(slide/2), { delay: 0 });
+            cy.get('.MuiSlider-thumb', { timeout: 4500 }).type('{rightarrow}'.repeat(slide/2), { delay: 0 });
 
             if (slide % 2 === 0) {
                 cy.get('#previous').click();
@@ -37,6 +35,8 @@ const vid2 = () => {
             })
             .else()
             .then(() => {
+
+                cy.get('body').trigger('mousemove')
 
                 // Lesson link
                 cy.url().then(url => {
@@ -70,6 +70,11 @@ const vid2 = () => {
                 })
 
             })
+
+            cy.window().then((win) => {
+                caches.delete('cache-storage-1');
+                caches.delete('images');
+            });
         })
     }) 
 }

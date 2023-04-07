@@ -43,7 +43,7 @@
   "main": "index.js",
   "devDependencies": {
     "csv-parse": "^5.3.6",
-    "cypress": "^10.9.0",
+    "cypress": "^10.11.0",
     "cypress-if": "^1.10.4",
     "eslint-plugin-cypress": "^2.12.1"
   },
