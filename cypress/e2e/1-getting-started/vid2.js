@@ -37,6 +37,7 @@ const vid2 = () => {
 
     cy.url().should('be.equal', `${BaseUrl}/home`)
 
+    cy.wait(3000)
 
 
 
