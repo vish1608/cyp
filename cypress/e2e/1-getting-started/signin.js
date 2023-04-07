@@ -4,7 +4,7 @@ const signin = () => {
 
     //email
     cy.get('.MuiTextField-root > .MuiInputBase-root > .MuiInputBase-input')
-    .type('vish@ontum.co')
+    .type('vishal@ontum.co')
 
     cy.get('.MuiButton-label').click()
 

@@ -22,7 +22,7 @@ import { yok } from "./yok"
 
 // it('signup', signup)
 
-// it('signin', signin)
+it('signin', signin)
 
 // it('vid', vid)
 
