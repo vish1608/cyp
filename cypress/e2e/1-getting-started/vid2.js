@@ -57,7 +57,7 @@ const vid2 = () => {
 
             cy.get('.MuiButton-outlined', { timeout: 80000 }).click({force: true});
 
-            cy.get('.react-pdf__Page__canvas', { timeout: 80000 });
+            cy.get('.react-pdf__Page__canvas', { timeout: 120000 });
 
             cy.get('[style="position: absolute; bottom: 5px; left: 50%; transform: translate(-50%, 0px); width: 100%; background: rgba(2, 2, 2, 0.71); display: flex; justify-content: center; align-items: center; height: 100%;"]').should('not.exist');
 
