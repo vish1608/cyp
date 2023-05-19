@@ -3,8 +3,7 @@ import { helpBaseUrl, BaseUrl } from "./consts"
 const signup = () => {
 
     //email
-    cy.get('.MuiTextField-root > .MuiInputBase-root > .MuiInputBase-input')
-    .type('vish@ontum.co')
+    cy.get('.MuiTextField-root > .MuiInputBase-root > .MuiInputBase-input').type('vish@ontum.co')
 
     cy.get(':nth-child(5) > .MuiButtonBase-root').click()
 
